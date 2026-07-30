@@ -2,14 +2,14 @@ name: Daily TTRPG Lead Fetcher
 
 on:
   schedule:
-    - cron: '0 6 * * *'  # Runs automatically every day at 6:00 AM UTC
-  workflow_dispatch:      # Allows manual triggers
+    - cron: '0 6 * * *'
+  workflow_dispatch:
 
 jobs:
   fetch-leads:
     runs-on: ubuntu-latest
     permissions:
-      contents: write    # Grants permission to push updated files
+      contents: write
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
@@ -22,7 +22,7 @@ jobs:
       - name: Install dependencies
         run: pip install requests beautifulsoup4
 
-      - name: Fetch Market Leads
+      - name: Fetch Market Leads & Cross-Match
         run: |
           cat << 'EOF' > fetch_leads.py
           import requests
@@ -31,32 +31,51 @@ jobs:
           from datetime import datetime
 
           leads = []
+          headers = {
+              'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
+          }
 
-          # 1. Fetch DriveThruRPG Best Sellers Feed
+          # 1. Fetch DriveThruRPG Feed
           try:
-              headers = {'User-Agent': 'Mozilla/5.0'}
-              r = requests.get('https://www.drivethrurpg.com/rss.php', headers=headers, timeout=10)
+              r = requests.get('https://www.drivethrurpg.com/rss.php', headers=headers, timeout=12)
               if r.status_code == 200:
                   root = ET.fromstring(r.text)
-                  for item in root.findall('.//item')[:10]:
-                      title = item.find('title').text if item.find('title') is not None else ''
-                      clean_title = title.replace('<![CDATA[', '').replace(']]>', '').strip()
+                  for item in root.findall('.//item')[:12]:
+                      raw_title = item.find('title').text if item.find('title') is not None else ''
+                      title = raw_title.replace('<![CDATA[', '').replace(']]>', '').strip()
+                      
+                      # Automatic Tier Mapping based on Fanatical Historical Matching
+                      t_lower = title.lower()
+                      if any(k in t_lower for k in ['delta green', 'pathfinder', 'dungeons & dragons', '5e', 'cyberpunk']):
+                          tier = "t1"
+                          match_name = "Delta Green / Pathfinder Tier (£23k - £41k Baseline)"
+                          follow_on = "Core Rulebook + Full Expansion Pack + VTT Modules"
+                      elif any(k in t_lower for k in ['dungeon crawl', 'symbaroum', 'traveller', 'cthulhu', 'warhammer']):
+                          tier = "t2"
+                          match_name = "DCC / Symbaroum Tier (£14k - £17k Baseline)"
+                          follow_on = "Campaign Setting + Adventure Modules"
+                      else:
+                          tier = "t3"
+                          match_name = "Cult Classic / GM Tools Tier (£8k - £13k Baseline)"
+                          follow_on = "Supplement & Asset Bundle"
+
                       leads.append({
                           "source": "DriveThruRPG",
-                          "title": clean_title,
-                          "metric": "Store Bestseller",
-                          "tier": "t2",
-                          "baseline_match": "Pathfinder / DCC"
+                          "title": title,
+                          "metric": "DriveThru Bestseller",
+                          "tier": tier,
+                          "baseline_match": match_name,
+                          "follow_on_recommendation": follow_on
                       })
           except Exception as e:
-              print("DTRPG Fetch Notice:", e)
+              print("DriveThruRPG Fetch Warning:", e)
 
-          # Fallback sample leads if external feeds are blocked
+          # Fallback if external feed is unreachable
           if not leads:
               leads = [
-                  { "source": "DriveThruRPG", "title": "Delta Green Cosmic Horror RPG", "metric": "Top Seller", "tier": "t1" },
-                  { "source": "DriveThruRPG", "title": "Pathfinder 2e Core Rulebook", "metric": "Top Seller", "tier": "t2" },
-                  { "source": "Kickstarter", "title": "Mothership 1e Sci-Fi Horror", "metric": "$1.4M Funded", "tier": "t1" }
+                  { "source": "DriveThruRPG", "title": "Delta Green: Cosmic Horror RPG", "metric": "Top Seller #1", "tier": "t1", "baseline_match": "Delta Green (£41.2k Rev)", "follow_on_recommendation": "Case Officer's Handbook + Handler's Guide + Modules" },
+                  { "source": "DriveThruRPG", "title": "Pathfinder 2e Remaster Core Rulebook", "metric": "Top Seller #2", "tier": "t1", "baseline_match": "Pathfinder 2e (£23.8k Rev)", "follow_on_recommendation": "Advanced Player's Guide + Lost Omens World Guide" },
+                  { "source": "DriveThruRPG", "title": "Dungeon Crawl Classics Core Book", "metric": "Top Seller #3", "tier": "t2", "baseline_match": "DCC Lankhmar (£17.7k Rev)", "follow_on_recommendation": "Lankhmar Campaign Boxed Set + Modules" }
               ]
 
           output = {
@@ -66,18 +85,18 @@ jobs:
 
           with open('ttrpg_leads.json', 'w') as f:
               json.dump(output, f, indent=4)
-          print("Successfully wrote ttrpg_leads.json")
+          print("Updated ttrpg_leads.json successfully.")
           EOF
           python fetch_leads.py
 
       - name: Commit and Push Updated Leads
         run: |
           git config --global user.name "github-actions[bot]"
-          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add ttrpg_leads.json
           if git diff --staged --quiet; then
-            echo "No changes to commit"
+            echo "No changes"
           else
-            git commit -m "Auto-update TTRPG market leads"
+            git commit -m "Auto-update DriveThruRPG leads"
             git push
           fi
