@@ -1,0 +1,82 @@
+name: Daily TTRPG Lead Fetcher
+
+on:
+  schedule:
+    - cron: '0 6 * * *'  # Runs automatically every day at 6:00 AM UTC
+  workflow_dispatch:      # Allows you to click a button to run it manually anytime
+
+jobs:
+  fetch-leads:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: pip install requests beautifulsoup4
+
+      - name: Fetch Market Leads
+        run: |
+          cat << 'EOF' > fetch_leads.py
+          import requests
+          import xml.etree.ElementTree as ET
+          import json
+          from datetime import datetime
+
+          leads = []
+
+          # 1. Fetch DriveThruRPG Best Sellers Feed
+          try:
+              r = requests.get('https://www.drivethrurpg.com/rss.php', timeout=10)
+              root = ET.fromstring(r.text)
+              for item in root.findall('.//item')[:10]:
+                  title = item.find('title').text if item.find('title') is not None else ''
+                  leads.append({
+                      "source": "DriveThruRPG",
+                      "title": title,
+                      "metric": "Store Bestseller",
+                      "tier": "t2",
+                      "baseline_match": "Pathfinder / DCC"
+                  })
+          except Exception as e:
+              print("DTRPG Fetch Error:", e)
+
+          # 2. Fetch Kickstarter Tabletop Trending
+          try:
+              r = requests.get('https://www.kickstarter.com/discover/categories/tabletop%20games/popular.atom', timeout=10)
+              root = ET.fromstring(r.text)
+              ns = {'atom': 'http://www.w3.org/2005/Atom'}
+              for entry in root.findall('atom:entry', ns)[:5]:
+                  title = entry.find('atom:title', ns).text
+                  leads.append({
+                      "source": "Kickstarter",
+                      "title": title,
+                      "metric": "Trending Campaign",
+                      "tier": "t1",
+                      "baseline_match": "Delta Green"
+                  })
+          except Exception as e:
+              print("Kickstarter Fetch Error:", e)
+
+          output = {
+              "last_updated": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+              "leads": leads
+          }
+
+          with open('ttrpg_leads.json', 'w') as f:
+              json.dump(output, f, indent=4)
+          EOF
+          python fetch_leads.py
+
+      - name: Commit and Push Updated Leads
+        run: |
+          git config --global user.name "TTRPG Bot"
+          git config --global user.email "bot@github.com"
+          git add ttrpg_leads.json
+          git commit -m "Auto-update TTRPG leads" || exit 0
+          git push
