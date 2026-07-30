@@ -1,23 +1,85 @@
 {
-    "last_updated": "2026-07-30 10:42:07",
+    "last_updated": "2026-07-30 10:52:30",
     "leads": [
         {
             "source": "DriveThruRPG",
-            "title": "Delta Green Cosmic Horror RPG",
-            "metric": "Top Seller",
-            "tier": "t1"
+            "title": "#1 Edo - Kaisen",
+            "metric": "DriveThru Bestseller",
+            "tier": "t3",
+            "baseline_match": "Cult Classic / GM Tools Tier (\u00a38k - \u00a313k Baseline)",
+            "follow_on_recommendation": "Supplement & Asset Bundle"
         },
         {
             "source": "DriveThruRPG",
-            "title": "Pathfinder 2e Core Rulebook",
-            "metric": "Top Seller",
-            "tier": "t2"
+            "title": "#2 Christmas in July 2026 Reading Fun Bundle!  [BUNDLE]",
+            "metric": "DriveThru Bestseller",
+            "tier": "t3",
+            "baseline_match": "Cult Classic / GM Tools Tier (\u00a38k - \u00a313k Baseline)",
+            "follow_on_recommendation": "Supplement & Asset Bundle"
         },
         {
-            "source": "Kickstarter",
-            "title": "Mothership 1e Sci-Fi Horror",
-            "metric": "$1.4M Funded",
-            "tier": "t1"
+            "source": "DriveThruRPG",
+            "title": "#3 Christmas in July 2026 Discovery Bundle! [BUNDLE]",
+            "metric": "DriveThru Bestseller",
+            "tier": "t3",
+            "baseline_match": "Cult Classic / GM Tools Tier (\u00a38k - \u00a313k Baseline)",
+            "follow_on_recommendation": "Supplement & Asset Bundle"
+        },
+        {
+            "source": "DriveThruRPG",
+            "title": "#4 Christmas in July 2026 Gamebook Galore! [BUNDLE]",
+            "metric": "DriveThru Bestseller",
+            "tier": "t3",
+            "baseline_match": "Cult Classic / GM Tools Tier (\u00a38k - \u00a313k Baseline)",
+            "follow_on_recommendation": "Supplement & Asset Bundle"
+        },
+        {
+            "source": "DriveThruRPG",
+            "title": "#5 The Veiled Shadowseer \u2013 A Sorcerous Origin of Illusion, Fate, and Uncertain Truth",
+            "metric": "DriveThru Bestseller",
+            "tier": "t3",
+            "baseline_match": "Cult Classic / GM Tools Tier (\u00a38k - \u00a313k Baseline)",
+            "follow_on_recommendation": "Supplement & Asset Bundle"
+        },
+        {
+            "source": "DriveThruRPG",
+            "title": "#6 Mordhark Loreguide - Armed Denizens Vol 2",
+            "metric": "DriveThru Bestseller",
+            "tier": "t3",
+            "baseline_match": "Cult Classic / GM Tools Tier (\u00a38k - \u00a313k Baseline)",
+            "follow_on_recommendation": "Supplement & Asset Bundle"
+        },
+        {
+            "source": "DriveThruRPG",
+            "title": "#7 [Korean] Billionaire Juliette",
+            "metric": "DriveThru Bestseller",
+            "tier": "t3",
+            "baseline_match": "Cult Classic / GM Tools Tier (\u00a38k - \u00a313k Baseline)",
+            "follow_on_recommendation": "Supplement & Asset Bundle"
+        },
+        {
+            "source": "DriveThruRPG",
+            "title": "#8 Creature Champion - Horror Dark Fantasy Stock Art Illustration",
+            "metric": "DriveThru Bestseller",
+            "tier": "t3",
+            "baseline_match": "Cult Classic / GM Tools Tier (\u00a38k - \u00a313k Baseline)",
+            "follow_on_recommendation": "Supplement & Asset Bundle"
+        },
+        {
+            "source": "DriveThruRPG",
+            "title": "#9 Fossilized Violence",
+            "metric": "DriveThru Bestseller",
+            "tier": "t3",
+            "baseline_match": "Cult Classic / GM Tools Tier (\u00a38k - \u00a313k Baseline)",
+            "follow_on_recommendation": "Supplement & Asset Bundle"
+        },
+        {
+            "source": "DriveThruRPG",
+            "title": "#10 Disposable Future",
+            "metric": "DriveThru Bestseller",
+            "tier": "t3",
+            "baseline_match": "Cult Classic / GM Tools Tier (\u00a38k - \u00a313k Baseline)",
+            "follow_on_recommendation": "Supplement & Asset Bundle"
         }
     ]
 }
