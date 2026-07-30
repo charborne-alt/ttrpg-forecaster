@@ -1,13 +1,37 @@
 {
-    "last_updated": "2026-07-30 10:58:03",
+    "last_updated": "2026-07-30 11:40:03",
     "leads": [
+        {
+            "source": "Bundle of Holding",
+            "title": "Live Competitor Bundle: GURPS 4E Essentials",
+            "metric": "Active Competitor",
+            "tier": "t2",
+            "baseline_match": "DCC / Symbaroum Tier (\u00a314k - \u00a317k Baseline)",
+            "follow_on_recommendation": "Counter-Offer Strategy: Pitch a Fanatical-exclusive expansion bundle to capture players who just bought the base game from our competitor."
+        },
+        {
+            "source": "Bundle of Holding",
+            "title": "Live Competitor Bundle: HackMaster",
+            "metric": "Active Competitor",
+            "tier": "t2",
+            "baseline_match": "DCC / Symbaroum Tier (\u00a314k - \u00a317k Baseline)",
+            "follow_on_recommendation": "Counter-Offer Strategy: Pitch a Fanatical-exclusive expansion bundle to capture players who just bought the base game from our competitor."
+        },
+        {
+            "source": "Bundle of Holding",
+            "title": "Live Competitor Bundle: Thrones & Bones",
+            "metric": "Active Competitor",
+            "tier": "t2",
+            "baseline_match": "DCC / Symbaroum Tier (\u00a314k - \u00a317k Baseline)",
+            "follow_on_recommendation": "Counter-Offer Strategy: Pitch a Fanatical-exclusive expansion bundle to capture players who just bought the base game from our competitor."
+        },
         {
             "source": "DriveThruRPG",
             "title": "#1 Edo - Kaisen",
             "metric": "DriveThru Bestseller",
             "tier": "t3",
             "baseline_match": "Cult Classic / GM Tools Tier (\u00a38k - \u00a313k Baseline)",
-            "follow_on_recommendation": "Supplement & Asset Bundle"
+            "follow_on_recommendation": ""
         },
         {
             "source": "DriveThruRPG",
@@ -15,7 +39,7 @@
             "metric": "DriveThru Bestseller",
             "tier": "t3",
             "baseline_match": "Cult Classic / GM Tools Tier (\u00a38k - \u00a313k Baseline)",
-            "follow_on_recommendation": "Supplement & Asset Bundle"
+            "follow_on_recommendation": ""
         },
         {
             "source": "DriveThruRPG",
@@ -23,7 +47,7 @@
             "metric": "DriveThru Bestseller",
             "tier": "t3",
             "baseline_match": "Cult Classic / GM Tools Tier (\u00a38k - \u00a313k Baseline)",
-            "follow_on_recommendation": "Supplement & Asset Bundle"
+            "follow_on_recommendation": ""
         },
         {
             "source": "DriveThruRPG",
@@ -31,7 +55,7 @@
             "metric": "DriveThru Bestseller",
             "tier": "t3",
             "baseline_match": "Cult Classic / GM Tools Tier (\u00a38k - \u00a313k Baseline)",
-            "follow_on_recommendation": "Supplement & Asset Bundle"
+            "follow_on_recommendation": ""
         },
         {
             "source": "DriveThruRPG",
@@ -39,7 +63,7 @@
             "metric": "DriveThru Bestseller",
             "tier": "t3",
             "baseline_match": "Cult Classic / GM Tools Tier (\u00a38k - \u00a313k Baseline)",
-            "follow_on_recommendation": "Supplement & Asset Bundle"
+            "follow_on_recommendation": ""
         },
         {
             "source": "DriveThruRPG",
@@ -47,7 +71,7 @@
             "metric": "DriveThru Bestseller",
             "tier": "t3",
             "baseline_match": "Cult Classic / GM Tools Tier (\u00a38k - \u00a313k Baseline)",
-            "follow_on_recommendation": "Supplement & Asset Bundle"
+            "follow_on_recommendation": ""
         },
         {
             "source": "DriveThruRPG",
@@ -55,7 +79,7 @@
             "metric": "DriveThru Bestseller",
             "tier": "t3",
             "baseline_match": "Cult Classic / GM Tools Tier (\u00a38k - \u00a313k Baseline)",
-            "follow_on_recommendation": "Supplement & Asset Bundle"
+            "follow_on_recommendation": ""
         },
         {
             "source": "DriveThruRPG",
@@ -63,7 +87,7 @@
             "metric": "DriveThru Bestseller",
             "tier": "t3",
             "baseline_match": "Cult Classic / GM Tools Tier (\u00a38k - \u00a313k Baseline)",
-            "follow_on_recommendation": "Supplement & Asset Bundle"
+            "follow_on_recommendation": ""
         },
         {
             "source": "DriveThruRPG",
@@ -71,7 +95,7 @@
             "metric": "DriveThru Bestseller",
             "tier": "t3",
             "baseline_match": "Cult Classic / GM Tools Tier (\u00a38k - \u00a313k Baseline)",
-            "follow_on_recommendation": "Supplement & Asset Bundle"
+            "follow_on_recommendation": ""
         },
         {
             "source": "DriveThruRPG",
@@ -79,7 +103,7 @@
             "metric": "DriveThru Bestseller",
             "tier": "t3",
             "baseline_match": "Cult Classic / GM Tools Tier (\u00a38k - \u00a313k Baseline)",
-            "follow_on_recommendation": "Supplement & Asset Bundle"
+            "follow_on_recommendation": ""
         }
     ]
 }
