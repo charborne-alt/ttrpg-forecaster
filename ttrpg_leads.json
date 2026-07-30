@@ -1,0 +1,23 @@
+{
+    "last_updated": "2026-07-30 09:30:47",
+    "leads": [
+        {
+            "source": "DriveThruRPG",
+            "title": "Delta Green Cosmic Horror RPG",
+            "metric": "Top Seller",
+            "tier": "t1"
+        },
+        {
+            "source": "DriveThruRPG",
+            "title": "Pathfinder 2e Core Rulebook",
+            "metric": "Top Seller",
+            "tier": "t2"
+        },
+        {
+            "source": "Kickstarter",
+            "title": "Mothership 1e Sci-Fi Horror",
+            "metric": "$1.4M Funded",
+            "tier": "t1"
+        }
+    ]
+}
