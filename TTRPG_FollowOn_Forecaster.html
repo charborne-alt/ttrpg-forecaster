@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fanatical TTRPG Prospector & Follow-On Forecaster</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0D1220; --panel:#151C2C; --panel2:#1B2336; --raise:#222C42;
+    --line:#2B3854; --line-soft:#212B40;
+    --tx:#EAF0FB; --sub:#94A2BE; --muted:#5F6E8B;
+    --cool:#34C6D3; --hot:#FF9440; --tail:#9B8CFF; --good:#35D08A;
+    --mono:'JetBrains Mono',monospace; --disp:'Space Grotesk',sans-serif; --body:'Inter',sans-serif;
+  }
+  *{box-sizing:border-box} html,body{margin:0}
+  body{ background:var(--ink); color:var(--tx); font-family:var(--body); font-size:14px; line-height:1.5; }
+  .wrap{max-width:1200px; margin:0 auto; padding:22px 20px 60px}
+  
+  header.bar{ display:flex; align-items:center; justify-content:space-between; border:1px solid var(--line); background:var(--panel); border-radius:14px; padding:14px 18px; margin-bottom:18px; }
+  .brandmark{ display:flex; align-items:center; gap:11px; padding-right:16px; border-right:1px solid var(--line); }
+  .brandmark .name{font-family:var(--disp); font-weight:700; font-size:16px}
+  .brandmark .sub{font-size:11px; color:var(--muted); text-transform:uppercase}
+  .title-live{font-family:var(--disp); font-weight:600; font-size:18px; margin-left:16px; flex-grow:1;}
+  
+  .dlbtn{background:var(--raise); border:1px solid var(--line); color:var(--tx); border-radius:9px; padding:8px 14px; font-family:var(--body); font-size:12.5px; cursor:pointer; transition:.15s}
+  .dlbtn:hover{border-color:var(--cool); background:rgba(52,198,211,.08)}
+
+  .grid{display:grid; grid-template-columns:400px 1fr; gap:18px; align-items:start}
+  .panel{border:1px solid var(--line); background:var(--panel); border-radius:14px; overflow:hidden}
+  .panel-h{padding:12px 16px; border-bottom:1px solid var(--line-soft); display:flex; gap:9px; align-items:center}
+  .panel-h h2{font-family:var(--disp); font-size:12.5px; font-weight:600; letter-spacing:.13em; text-transform:uppercase; color:var(--sub); margin:0}
+  .panel-b{padding:16px}
+  
+  label.field{display:block; margin-bottom:13px}
+  .field .lab{display:flex; justify-content:space-between; font-size:11.5px; color:var(--sub); margin-bottom:5px}
+  input[type=text], select{ width:100%; background:var(--ink); border:1px solid var(--line); color:var(--tx); border-radius:9px; padding:9px 11px; font-family:var(--body); font-size:13.5px; }
+  
+  .raw-data-box { background: rgba(52, 198, 211, 0.08); padding: 12px; border-radius: 9px; border: 1px solid var(--cool); margin-bottom: 15px; }
+  .status-text { font-size: 11px; color: var(--cool); font-style: italic; display: inline-block; margin-left: 8px;}
+
+  .follow-on-box { background: rgba(53, 208, 138, 0.08); border: 1px solid var(--good); padding: 12px; border-radius: 9px; margin-bottom: 15px; }
+  .follow-on-box .title { font-weight: 600; color: var(--good); font-size: 12px; text-transform: uppercase; font-family: var(--disp); }
+  .follow-on-box .desc { font-size: 13px; color: var(--tx); margin-top: 4px; }
+
+  .profiles{display:grid; grid-template-columns:1fr; gap:8px; margin-bottom:14px}
+  .profiles button{background:var(--ink); border:1px solid var(--line); color:var(--sub); border-radius:8px; padding:10px; cursor:pointer; transition:.15s; text-align:left; display:flex; flex-direction:column; gap:4px}
+  .profiles button.on{border-color:var(--hot); background:rgba(255,148,64,.12); color:var(--tx)}
+  .profiles button b{font-size:13px; font-weight:600}
+  .profiles button span{font-size:11px; color:var(--muted)}
+  
+  .headline{display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-bottom:16px}
+  .big{border:1px solid var(--line); border-radius:14px; padding:16px 18px; background:var(--panel2)}
+  .big .k{font-size:11px; text-transform:uppercase; color:var(--muted)}
+  .big .v{font-family:var(--mono); font-weight:700; font-size:26px; margin-top:8px}
+  
+  .periods{display:grid; grid-template-columns:repeat(3,1fr); gap:12px}
+  .pcard{border:1px solid var(--line); border-radius:13px; background:var(--panel)}
+  .pcard .top{padding:10px 13px; display:flex; align-items:center; gap:8px; border-bottom:1px solid var(--line-soft)}
+  .pcard .top .tag{width:8px;height:8px;border-radius:2px}
+  .pcard .top .nm{font-family:var(--disp); font-size:12px; font-weight:600}
+  .pcard .body{padding:13px}
+  .pcard .rev{font-family:var(--mono); font-weight:700; font-size:20px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="bar">
+    <div style="display:flex; align-items:center;">
+        <div class="brandmark">
+        <div>
+            <div class="name">TTRPG PROSPECTOR</div>
+            <div class="sub">DriveThruRPG Cross-Match</div>
+        </div>
+        </div>
+        <div class="title-live" id="titleLive">Select Prospect...</div>
+    </div>
+    <button class="dlbtn" id="dlForecast">⤓ Download Forecast (CSV)</button>
+  </header>
+
+  <div class="grid">
+    <div>
+      <div class="panel">
+        <div class="panel-h"><h2>DriveThruRPG Prospect Ingestion</h2></div>
+        <div class="panel-b">
+          
+          <div class="raw-data-box field">
+              <span class="lab">Live Feed Pipeline <span class="status-text" id="apiStatus">Loading repository feed...</span></span>
+              <select id="ttrpgSelect">
+                  <option value="">-- Select DriveThruRPG Lead --</option>
+              </select>
+          </div>
+
+          <label class="field">
+            <span class="lab">Selected Target IP / Title</span>
+            <input type="text" id="game" placeholder="e.g. Delta Green Core Book">
+          </label>
+
+          <div class="follow-on-box">
+              <div class="title">Recommended Follow-On Bundle Strategy</div>
+              <div class="desc" id="followOnText">Select a lead above to view content recommendations.</div>
+          </div>
+
+          <div class="lab" style="margin-top:16px; margin-bottom:8px">Fanatical Historical Match (2025–2026 Data)</div>
+          
+          <div class="profiles" id="sharedProfiles">
+            <button data-tier="t1" class="on"><b>Tier 1: Megahit Baseline</b><span>£41.2k Rev / 2,070 Cust / 47.5% Margin (Delta Green)</span></button>
+            <button data-tier="t2"><b>Tier 2: Heavy Hitter Baseline</b><span>£17.7k Rev / 1,013 Cust / 47.2% Margin (DCC / Symbaroum)</span></button>
+            <button data-tier="t3"><b>Tier 3: Cult Classic Baseline</b><span>£13.4k Rev / 528 Cust / 42.6% Margin (Traveller / Dune)</span></button>
+            <button data-tier="t4"><b>Tier 4: Category Average</b><span>£8.4k Rev / 265 Cust / 42.6% Margin</span></button>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="headline">
+        <div class="big">
+          <div class="k">Forecast Revenue</div>
+          <div class="v" id="totRev">£0</div>
+        </div>
+        <div class="big">
+          <div class="k">Forecast Margin (42.6% Avg)</div>
+          <div class="v" id="totMargin">£0</div>
+        </div>
+        <div class="big">
+          <div class="k">Forecast New Customers</div>
+          <div class="v" id="totCust">0</div>
+        </div>
+      </div>
+
+      <div class="periods">
+        <div class="pcard">
+          <div class="top"><span class="tag" style="background:var(--cool)"></span><span class="nm">LAUNCH SPIKE</span></div>
+          <div class="body"><div class="rev" id="revLaunch" style="color:var(--cool)">£0</div><div style="font-size:12px; color:var(--muted); margin-top:5px">First 48 Hours (40%)</div></div>
+        </div>
+        <div class="pcard">
+          <div class="top"><span class="tag" style="background:var(--hot)"></span><span class="nm">MID-CAMPAIGN</span></div>
+          <div class="body"><div class="rev" id="revMid" style="color:var(--hot)">£0</div><div style="font-size:12px; color:var(--muted); margin-top:5px">Steady Drip (30%)</div></div>
+        </div>
+        <div class="pcard">
+          <div class="top"><span class="tag" style="background:var(--tail)"></span><span class="nm">ENDING FOMO</span></div>
+          <div class="body"><div class="rev" id="revFomo" style="color:var(--tail)">£0</div><div style="font-size:12px; color:var(--muted); margin-top:5px">Final 48 Hours (30%)</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+const LIVE_JSON_URL = "https://charborne-alt.github.io/ttrpg-forecaster/ttrpg_leads.json";
+
+const TIERS = {
+  t1: { rev: 41250, margin: 19576, cust: 2070 },
+  t2: { rev: 17714, margin: 8357,  cust: 1013 },
+  t3: { rev: 13442, margin: 5700,  cust: 528 },
+  t4: { rev: 8444,  margin: 3598,  cust: 265 }
+};
+
+let currentTier = 't1';
+let loadedLeads = [];
+
+function fmtGBP(n) { return '£' + Math.round(n).toLocaleString('en-GB'); }
+function fmtInt(n) { return Math.round(n).toLocaleString('en-GB'); }
+
+function compute() {
+  const game = document.getElementById('game').value.trim() || 'Select Prospect...';
+  document.getElementById('titleLive').innerText = game;
+
+  const baseline = TIERS[currentTier];
+  const totalRev = baseline.rev;
+  const totalMargin = baseline.margin;
+  const totalCust = baseline.cust;
+
+  document.getElementById('totRev').innerText = fmtGBP(totalRev);
+  document.getElementById('totMargin').innerText = fmtGBP(totalMargin);
+  document.getElementById('totCust').innerText = fmtInt(totalCust);
+  document.getElementById('revLaunch').innerText = fmtGBP(totalRev * 0.40);
+  document.getElementById('revMid').innerText = fmtGBP(totalRev * 0.30);
+  document.getElementById('revFomo').innerText = fmtGBP(totalRev * 0.30);
+
+  window.__forecast = { game, tier: currentTier, totalRev, totalMargin, totalCust };
+}
+
+async function loadSnapshotLeads() {
+    try {
+        const response = await fetch(LIVE_JSON_URL);
+        const data = await response.json();
+        loadedLeads = data.leads || [];
+        
+        document.getElementById('apiStatus').innerText = `Updated: ${data.last_updated || 'Today'}`;
+        const selectBox = document.getElementById('ttrpgSelect');
+        
+        loadedLeads.forEach((lead, index) => {
+            const option = document.createElement('option');
+            option.value = index;
+            option.textContent = `[${lead.source}] ${lead.title}`;
+            selectBox.appendChild(option);
+        });
+    } catch (e) {
+        document.getElementById('apiStatus').innerText = 'Feed connection error. Using local benchmarks.';
+    }
+}
+
+document.getElementById('ttrpgSelect').addEventListener('change', (e) => {
+    if (e.target.value === "") return;
+    const lead = loadedLeads[e.target.value];
+    document.getElementById('game').value = lead.title;
+    document.getElementById('followOnText').innerText = lead.follow_on_recommendation || "Bundle Core System + Expansions + Adventure Modules";
+    
+    const btn = document.querySelector(`#sharedProfiles button[data-tier="${lead.tier}"]`);
+    if (btn) btn.click();
+    compute();
+});
+
+document.querySelectorAll('.profiles button').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.profiles button').forEach(b => b.classList.remove('on'));
+    btn.classList.add('on');
+    currentTier = btn.dataset.tier;
+    compute();
+  });
+});
+
+document.getElementById('game').addEventListener('input', compute);
+loadSnapshotLeads();
+compute();
+</script>
+</body>
+</html>
