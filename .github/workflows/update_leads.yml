@@ -20,41 +20,68 @@ jobs:
           python-version: '3.10'
 
       - name: Install dependencies
-        run: pip install requests
+        run: pip install requests beautifulsoup4
 
-      - name: Fetch Market Leads via RSS Gateway
+      - name: Fetch Market Leads & Cross-Match
         run: |
           cat << 'EOF' > fetch_leads.py
           import requests
+          import xml.etree.ElementTree as ET
+          from bs4 import BeautifulSoup
           import json
+          import re
           from datetime import datetime
 
           leads = []
+          headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'}
 
-          # 1. Fetch DriveThruRPG Feed via RSS-to-JSON Gateway
+          # 1. SCRAPE COMPETITOR: Bundle of Holding
+          try:
+              r_boh = requests.get('https://bundleofholding.com/', headers=headers, timeout=15)
+              if r_boh.status_code == 200:
+                  soup = BeautifulSoup(r_boh.text, 'html.parser')
+                  active_bundles = set()
+                  
+                  # BoH keeps active bundles in links containing '/presents/'
+                  for link in soup.find_all('a', href=True):
+                      if '/presents/' in link['href']:
+                          name = link.text.strip()
+                          if name and len(name) > 3 and name.lower() not in ['past offers', 'all offers']:
+                              active_bundles.add(name)
+                  
+                  for idx, bundle_name in enumerate(list(active_bundles)[:3]):
+                      leads.append({
+                          "source": "Bundle of Holding",
+                          "title": f"Live Competitor Bundle: {bundle_name}",
+                          "metric": "Active Competitor",
+                          "tier": "t2",
+                          "baseline_match": "DCC / Symbaroum Tier (£14k - £17k Baseline)",
+                          "follow_on_recommendation": "Counter-Offer Strategy: Pitch a Fanatical-exclusive expansion bundle to capture players who just bought the base game from our competitor."
+                      })
+          except Exception as e:
+              print("Bundle of Holding Fetch Warning:", e)
+
+          # 2. FETCH RETAIL LEADS: DriveThruRPG via Gateway
           try:
               gateway_url = "https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.drivethrurpg.com%2Frss.php"
-              r = requests.get(gateway_url, timeout=15)
-              if r.status_code == 200:
-                  data = r.json()
+              r_dtrpg = requests.get(gateway_url, timeout=15)
+              if r_dtrpg.status_code == 200:
+                  data = r_dtrpg.json()
                   if data.get("status") == "ok":
-                      for idx, item in enumerate(data.get("items", [])[:12]):
+                      for idx, item in enumerate(data.get("items", [])[:10]):
                           title = item.get("title", "").strip()
                           t_lower = title.lower()
                           
-                          # Tier Mapping based on Fanatical 2025/2026 Data
+                          # Tier Mapping against Fanatical Data
                           if any(k in t_lower for k in ['delta green', 'pathfinder', 'dungeons & dragons', '5e', 'cyberpunk']):
                               tier = "t1"
                               match_name = "Delta Green / Pathfinder Tier (£23k - £41k Baseline)"
-                              follow_on = "Core Rulebook + Full Expansion Pack + VTT Modules"
                           elif any(k in t_lower for k in ['dungeon crawl', 'symbaroum', 'traveller', 'cthulhu', 'warhammer']):
                               tier = "t2"
                               match_name = "DCC / Symbaroum Tier (£14k - £17k Baseline)"
-                              follow_on = "Campaign Setting + Adventure Modules"
                           else:
                               tier = "t3"
                               match_name = "Cult Classic / GM Tools Tier (£8k - £13k Baseline)"
-                              follow_on = "Supplement & Asset Bundle"
 
                           leads.append({
                               "source": "DriveThruRPG",
@@ -62,19 +89,16 @@ jobs:
                               "metric": "DriveThru Bestseller",
                               "tier": tier,
                               "baseline_match": match_name,
-                              "follow_on_recommendation": follow_on
+                              "follow_on_recommendation": "" # HTML script will auto-generate this
                           })
           except Exception as e:
-              print("Gateway Fetch Notice:", e)
+              print("DriveThruRPG Gateway Warning:", e)
 
-          # 2. Comprehensive Backup Pipeline
-          if len(leads) < 5:
+          # 3. SAFETY FALLBACK (Ensures file never breaks)
+          if not leads:
               leads = [
-                  { "source": "DriveThruRPG", "title": "#1 Delta Green Cosmic Horror RPG Collection", "metric": "Store Bestseller #1", "tier": "t1", "baseline_match": "Delta Green (£41.2k Baseline)", "follow_on_recommendation": "Case Officer's Handbook + Handler's Guide" },
-                  { "source": "DriveThruRPG", "title": "#2 Pathfinder 2e Remaster Core", "metric": "Store Bestseller #2", "tier": "t1", "baseline_match": "Pathfinder 2e (£23.8k Baseline)", "follow_on_recommendation": "Advanced Player's Guide + Lost Omens" },
-                  { "source": "DriveThruRPG", "title": "#3 Dungeon Crawl Classics", "metric": "Store Bestseller #3", "tier": "t2", "baseline_match": "DCC Lankhmar (£17.7k Baseline)", "follow_on_recommendation": "Lankhmar Boxed Set + Modules" },
-                  { "source": "DriveThruRPG", "title": "#4 Call of Cthulhu 7th Edition", "metric": "Store Bestseller #4", "tier": "t1", "baseline_match": "Delta Green Tier", "follow_on_recommendation": "Keeper Screen Pack + Pulp Cthulhu" },
-                  { "source": "DriveThruRPG", "title": "#5 Symbaroum Dark Fantasy", "metric": "Store Bestseller #5", "tier": "t2", "baseline_match": "Symbaroum (£14.2k Baseline)", "follow_on_recommendation": "Monster Codex + GM Guide" }
+                  { "source": "Bundle of Holding", "title": "Live Competitor Bundle: Fantasy Campaign", "tier": "t2" },
+                  { "source": "DriveThruRPG", "title": "#1 Delta Green Cosmic Horror RPG Collection", "tier": "t1" }
               ]
 
           output = {
@@ -84,10 +108,11 @@ jobs:
 
           with open('ttrpg_leads.json', 'w') as f:
               json.dump(output, f, indent=4)
+          print("Updated ttrpg_leads.json with", len(leads), "products.")
           EOF
           python fetch_leads.py
 
-      - name: Commit and Push
+      - name: Commit and Push Updated Leads
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
@@ -95,6 +120,6 @@ jobs:
           if git diff --staged --quiet; then
             echo "No changes"
           else
-            git commit -m "Auto-update DriveThruRPG leads via Gateway"
+            git commit -m "Auto-update TTRPG leads with Competitor Monitoring"
             git push
           fi
