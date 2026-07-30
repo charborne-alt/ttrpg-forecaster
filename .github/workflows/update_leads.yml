@@ -31,7 +31,7 @@ jobs:
 
           leads = []
 
-          # 1. Fetch DriveThruRPG Feed via RSS-to-JSON Gateway (Bypasses Cloudflare Datacenter Blocks)
+          # 1. Fetch DriveThruRPG Feed via RSS-to-JSON Gateway
           try:
               gateway_url = "https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.drivethrurpg.com%2Frss.php"
               r = requests.get(gateway_url, timeout=15)
@@ -42,7 +42,7 @@ jobs:
                           title = item.get("title", "").strip()
                           t_lower = title.lower()
                           
-                          # Tier Mapping against Fanatical 2025/2026 Historical Performance
+                          # Tier Mapping based on Fanatical 2025/2026 Data
                           if any(k in t_lower for k in ['delta green', 'pathfinder', 'dungeons & dragons', '5e', 'cyberpunk']):
                               tier = "t1"
                               match_name = "Delta Green / Pathfinder Tier (£23k - £41k Baseline)"
@@ -67,19 +67,14 @@ jobs:
           except Exception as e:
               print("Gateway Fetch Notice:", e)
 
-          # 2. Comprehensive 10-Product Backup Pipeline (If gateway is ever down)
+          # 2. Comprehensive Backup Pipeline
           if len(leads) < 5:
               leads = [
-                  { "source": "DriveThruRPG", "title": "#1 Delta Green: Cosmic Horror RPG Collection", "metric": "Store Bestseller #1", "tier": "t1", "baseline_match": "Delta Green (£41.2k Baseline)", "follow_on_recommendation": "Case Officer's Handbook + Handler's Guide + Modules" },
-                  { "source": "DriveThruRPG", "title": "#2 Pathfinder 2e Remaster Core Rulebook", "metric": "Store Bestseller #2", "tier": "t1", "baseline_match": "Pathfinder 2e (£23.8k Baseline)", "follow_on_recommendation": "Advanced Player's Guide + Lost Omens World Guide" },
-                  { "source": "DriveThruRPG", "title": "#3 Dungeon Crawl Classics Core Rulebook", "metric": "Store Bestseller #3", "tier": "t2", "baseline_match": "DCC Lankhmar (£17.7k Baseline)", "follow_on_recommendation": "Lankhmar Campaign Boxed Set + Modules" },
-                  { "source": "DriveThruRPG", "title": "#4 Call of Cthulhu 7th Edition Keeper Rulebook", "metric": "Store Bestseller #4", "tier": "t1", "baseline_match": "Delta Green / Cthulhu Tier (£23k+ Baseline)", "follow_on_recommendation": "Keeper Screen Pack + Pulp Cthulhu + Scenario Packs" },
-                  { "source": "DriveThruRPG", "title": "#5 Symbaroum Dark Fantasy RPG Core Rulebook", "metric": "Store Bestseller #5", "tier": "t2", "baseline_match": "Symbaroum (£14.2k Baseline)", "follow_on_recommendation": "Monster Codex + Game Master's Guide + Adventure Campaign" },
-                  { "source": "DriveThruRPG", "title": "#6 Traveller Core Rulebook Update 2022", "metric": "Store Bestseller #6", "tier": "t3", "baseline_match": "Traveller Classic (£13.4k Baseline)", "follow_on_recommendation": "Central Supply Catalogue + High Guard + Vehicle Handbook" },
-                  { "source": "DriveThruRPG", "title": "#7 Cyberpunk RED Core Rulebook", "metric": "Store Bestseller #7", "tier": "t2", "baseline_match": "Heavy Hitter (£10.7k Baseline)", "follow_on_recommendation": "Black Chrome + Tales of the RED + Interface RED" },
-                  { "source": "DriveThruRPG", "title": "#8 Dune: Adventures in the Imperium", "metric": "Store Bestseller #8", "tier": "t3", "baseline_match": "Dune Imperium (£9.1k Baseline)", "follow_on_recommendation": "Sand and Dust Sourcebook + Agents of Dune Boxed Set" },
-                  { "source": "DriveThruRPG", "title": "#9 Twilight: 2000 4th Edition Core Set", "metric": "Store Bestseller #9", "tier": "t3", "baseline_match": "Twilight 2000 (£9.8k Baseline)", "follow_on_recommendation": "Urban Operations + Hostile Waters Expansions" },
-                  { "source": "DriveThruRPG", "title": "#10 Game Master's Book of Random Tables", "metric": "Store Bestseller #10", "tier": "t3", "baseline_match": "GM Tools (£13.2k Baseline)", "follow_on_recommendation": "Non-Player Characters + Traps & Dungeons Bundle" }
+                  { "source": "DriveThruRPG", "title": "#1 Delta Green Cosmic Horror RPG Collection", "metric": "Store Bestseller #1", "tier": "t1", "baseline_match": "Delta Green (£41.2k Baseline)", "follow_on_recommendation": "Case Officer's Handbook + Handler's Guide" },
+                  { "source": "DriveThruRPG", "title": "#2 Pathfinder 2e Remaster Core", "metric": "Store Bestseller #2", "tier": "t1", "baseline_match": "Pathfinder 2e (£23.8k Baseline)", "follow_on_recommendation": "Advanced Player's Guide + Lost Omens" },
+                  { "source": "DriveThruRPG", "title": "#3 Dungeon Crawl Classics", "metric": "Store Bestseller #3", "tier": "t2", "baseline_match": "DCC Lankhmar (£17.7k Baseline)", "follow_on_recommendation": "Lankhmar Boxed Set + Modules" },
+                  { "source": "DriveThruRPG", "title": "#4 Call of Cthulhu 7th Edition", "metric": "Store Bestseller #4", "tier": "t1", "baseline_match": "Delta Green Tier", "follow_on_recommendation": "Keeper Screen Pack + Pulp Cthulhu" },
+                  { "source": "DriveThruRPG", "title": "#5 Symbaroum Dark Fantasy", "metric": "Store Bestseller #5", "tier": "t2", "baseline_match": "Symbaroum (£14.2k Baseline)", "follow_on_recommendation": "Monster Codex + GM Guide" }
               ]
 
           output = {
@@ -89,11 +84,10 @@ jobs:
 
           with open('ttrpg_leads.json', 'w') as f:
               json.dump(output, f, indent=4)
-          print("Updated ttrpg_leads.json with", len(leads), "products.")
           EOF
           python fetch_leads.py
 
-      - name: Commit and Push Updated Leads
+      - name: Commit and Push
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
