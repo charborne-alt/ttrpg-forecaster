@@ -1,6 +1,14 @@
 {
-    "last_updated": "2026-07-31 12:32:14",
+    "last_updated": "2026-08-01 11:12:00",
     "leads": [
+        {
+            "source": "Bundle of Holding",
+            "title": "Live Competitor Bundle: GURPS 4E Horror",
+            "metric": "Active Competitor",
+            "tier": "t2",
+            "baseline_match": "DCC / Symbaroum Tier (\u00a314k - \u00a317k Baseline)",
+            "follow_on_recommendation": "Counter-Offer Strategy: Pitch a Fanatical-exclusive expansion bundle to capture players who just bought the base game from our competitor."
+        },
         {
             "source": "Bundle of Holding",
             "title": "Live Competitor Bundle: GURPS 4E Essentials",
@@ -11,19 +19,91 @@
         },
         {
             "source": "Bundle of Holding",
-            "title": "Live Competitor Bundle: GURPS Combat Action",
+            "title": "Live Competitor Bundle: GURPS 4E Fantasy",
             "metric": "Active Competitor",
             "tier": "t2",
             "baseline_match": "DCC / Symbaroum Tier (\u00a314k - \u00a317k Baseline)",
             "follow_on_recommendation": "Counter-Offer Strategy: Pitch a Fanatical-exclusive expansion bundle to capture players who just bought the base game from our competitor."
         },
         {
-            "source": "Bundle of Holding",
-            "title": "Live Competitor Bundle: GURPS 4E Infinite Worlds",
-            "metric": "Active Competitor",
-            "tier": "t2",
-            "baseline_match": "DCC / Symbaroum Tier (\u00a314k - \u00a317k Baseline)",
-            "follow_on_recommendation": "Counter-Offer Strategy: Pitch a Fanatical-exclusive expansion bundle to capture players who just bought the base game from our competitor."
+            "source": "DriveThruRPG",
+            "title": "#1 SALOONS &amp; OUTLAWS\u2122 Frontier Stories: Fire and Ash: Part Three",
+            "metric": "DriveThru Bestseller",
+            "tier": "t3",
+            "baseline_match": "Cult Classic / GM Tools Tier (\u00a38k - \u00a313k Baseline)",
+            "follow_on_recommendation": ""
+        },
+        {
+            "source": "DriveThruRPG",
+            "title": "#2 StoryGuider: Of Mechs and Magic",
+            "metric": "DriveThru Bestseller",
+            "tier": "t3",
+            "baseline_match": "Cult Classic / GM Tools Tier (\u00a38k - \u00a313k Baseline)",
+            "follow_on_recommendation": ""
+        },
+        {
+            "source": "DriveThruRPG",
+            "title": "#3 ADV-MI02D: Wayfinder's Rest - A Lodesyia Adventure Module",
+            "metric": "DriveThru Bestseller",
+            "tier": "t3",
+            "baseline_match": "Cult Classic / GM Tools Tier (\u00a38k - \u00a313k Baseline)",
+            "follow_on_recommendation": ""
+        },
+        {
+            "source": "DriveThruRPG",
+            "title": "#4 Clean Getaway",
+            "metric": "DriveThru Bestseller",
+            "tier": "t3",
+            "baseline_match": "Cult Classic / GM Tools Tier (\u00a38k - \u00a313k Baseline)",
+            "follow_on_recommendation": ""
+        },
+        {
+            "source": "DriveThruRPG",
+            "title": "#5 PORTSIDE PREDICAMENT: CRIMPED!",
+            "metric": "DriveThru Bestseller",
+            "tier": "t3",
+            "baseline_match": "Cult Classic / GM Tools Tier (\u00a38k - \u00a313k Baseline)",
+            "follow_on_recommendation": ""
+        },
+        {
+            "source": "DriveThruRPG",
+            "title": "#6 Cantrips Reimagined",
+            "metric": "DriveThru Bestseller",
+            "tier": "t3",
+            "baseline_match": "Cult Classic / GM Tools Tier (\u00a38k - \u00a313k Baseline)",
+            "follow_on_recommendation": ""
+        },
+        {
+            "source": "DriveThruRPG",
+            "title": "#7 Heroes Handbook: Crown of the Vigilante",
+            "metric": "DriveThru Bestseller",
+            "tier": "t3",
+            "baseline_match": "Cult Classic / GM Tools Tier (\u00a38k - \u00a313k Baseline)",
+            "follow_on_recommendation": ""
+        },
+        {
+            "source": "DriveThruRPG",
+            "title": "#8 Crimps, Friends, and Agents: People and Places around port",
+            "metric": "DriveThru Bestseller",
+            "tier": "t3",
+            "baseline_match": "Cult Classic / GM Tools Tier (\u00a38k - \u00a313k Baseline)",
+            "follow_on_recommendation": ""
+        },
+        {
+            "source": "DriveThruRPG",
+            "title": "#9 Ship's Articles and Crew List",
+            "metric": "DriveThru Bestseller",
+            "tier": "t3",
+            "baseline_match": "Cult Classic / GM Tools Tier (\u00a38k - \u00a313k Baseline)",
+            "follow_on_recommendation": ""
+        },
+        {
+            "source": "DriveThruRPG",
+            "title": "#10 Ship's Cat Generator",
+            "metric": "DriveThru Bestseller",
+            "tier": "t3",
+            "baseline_match": "Cult Classic / GM Tools Tier (\u00a38k - \u00a313k Baseline)",
+            "follow_on_recommendation": ""
         }
     ]
 }
