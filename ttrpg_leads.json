@@ -1,9 +1,9 @@
 {
-    "last_updated": "2026-08-02 11:07:29",
+    "last_updated": "2026-08-03 15:59:12",
     "leads": [
         {
             "source": "Bundle of Holding",
-            "title": "Live Competitor Bundle: Fantasy",
+            "title": "Live Competitor Bundle: Horror",
             "metric": "Active Competitor",
             "tier": "t2",
             "baseline_match": "DCC / Symbaroum Tier (\u00a314k - \u00a317k Baseline)",
@@ -11,7 +11,7 @@
         },
         {
             "source": "Bundle of Holding",
-            "title": "Live Competitor Bundle: GURPS 4E Essentials Bundle",
+            "title": "Live Competitor Bundle: Infinite Worlds",
             "metric": "Active Competitor",
             "tier": "t2",
             "baseline_match": "DCC / Symbaroum Tier (\u00a314k - \u00a317k Baseline)",
@@ -19,91 +19,11 @@
         },
         {
             "source": "Bundle of Holding",
-            "title": "Live Competitor Bundle: Space",
+            "title": "Live Competitor Bundle: GURPS Combat Action",
             "metric": "Active Competitor",
             "tier": "t2",
             "baseline_match": "DCC / Symbaroum Tier (\u00a314k - \u00a317k Baseline)",
             "follow_on_recommendation": "Counter-Offer Strategy: Pitch a Fanatical-exclusive expansion bundle to capture players who just bought the base game from our competitor."
-        },
-        {
-            "source": "DriveThruRPG",
-            "title": "#1 2096 Adventures - 33 Surrounded",
-            "metric": "DriveThru Bestseller",
-            "tier": "t3",
-            "baseline_match": "Cult Classic / GM Tools Tier (\u00a38k - \u00a313k Baseline)",
-            "follow_on_recommendation": ""
-        },
-        {
-            "source": "DriveThruRPG",
-            "title": "#2 Fantasy Heroes Printable Tokens Pt.11 (2022-2024) - FREE TRIAL",
-            "metric": "DriveThru Bestseller",
-            "tier": "t3",
-            "baseline_match": "Cult Classic / GM Tools Tier (\u00a38k - \u00a313k Baseline)",
-            "follow_on_recommendation": ""
-        },
-        {
-            "source": "DriveThruRPG",
-            "title": "#3 Un Petit Tours",
-            "metric": "DriveThru Bestseller",
-            "tier": "t3",
-            "baseline_match": "Cult Classic / GM Tools Tier (\u00a38k - \u00a313k Baseline)",
-            "follow_on_recommendation": ""
-        },
-        {
-            "source": "DriveThruRPG",
-            "title": "#4 Just Some Tours",
-            "metric": "DriveThru Bestseller",
-            "tier": "t3",
-            "baseline_match": "Cult Classic / GM Tools Tier (\u00a38k - \u00a313k Baseline)",
-            "follow_on_recommendation": ""
-        },
-        {
-            "source": "DriveThruRPG",
-            "title": "#5 Corporate Blacksite Lab - Cyberpunk Sci-Fi Animated Battle Token Map",
-            "metric": "DriveThru Bestseller",
-            "tier": "t1",
-            "baseline_match": "Delta Green / Pathfinder Tier (\u00a323k - \u00a341k Baseline)",
-            "follow_on_recommendation": ""
-        },
-        {
-            "source": "DriveThruRPG",
-            "title": "#6 Corporate Blacksite Lab 4k - Cyberpunk Sci-Fi Animated Battle Token Map",
-            "metric": "DriveThru Bestseller",
-            "tier": "t1",
-            "baseline_match": "Delta Green / Pathfinder Tier (\u00a323k - \u00a341k Baseline)",
-            "follow_on_recommendation": ""
-        },
-        {
-            "source": "DriveThruRPG",
-            "title": "#7 Baltic/Northern Map Asset Pack",
-            "metric": "DriveThru Bestseller",
-            "tier": "t3",
-            "baseline_match": "Cult Classic / GM Tools Tier (\u00a38k - \u00a313k Baseline)",
-            "follow_on_recommendation": ""
-        },
-        {
-            "source": "DriveThruRPG",
-            "title": "#8 Building Better Random Tables: A Solo Roleplaying Game Toolbox Essential",
-            "metric": "DriveThru Bestseller",
-            "tier": "t3",
-            "baseline_match": "Cult Classic / GM Tools Tier (\u00a38k - \u00a313k Baseline)",
-            "follow_on_recommendation": ""
-        },
-        {
-            "source": "DriveThruRPG",
-            "title": "#9 Earl Geier Presents: Well-Dressed Monster",
-            "metric": "DriveThru Bestseller",
-            "tier": "t3",
-            "baseline_match": "Cult Classic / GM Tools Tier (\u00a38k - \u00a313k Baseline)",
-            "follow_on_recommendation": ""
-        },
-        {
-            "source": "DriveThruRPG",
-            "title": "#10 The Waystation  GM Tools, Volume II: Settlements \u2014 A System-Agnostic Toolkit",
-            "metric": "DriveThru Bestseller",
-            "tier": "t3",
-            "baseline_match": "Cult Classic / GM Tools Tier (\u00a38k - \u00a313k Baseline)",
-            "follow_on_recommendation": ""
         }
     ]
 }
