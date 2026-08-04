@@ -1,21 +1,21 @@
 {
-    "last_updated": "2026-08-04 10:51:03",
+    "last_updated": "2026-08-04 12:30:15",
     "leads": [
         {
             "source": "Bundle of Holding",
-            "title": "Live Competitor: GURPS 4E Space",
+            "title": "Live Competitor: Horror",
             "metric": "Active Competitor",
             "tier": "t2"
         },
         {
             "source": "Bundle of Holding",
-            "title": "Live Competitor: GURPS 4E Horror",
+            "title": "Live Competitor: Essentials",
             "metric": "Active Competitor",
             "tier": "t2"
         },
         {
             "source": "Bundle of Holding",
-            "title": "Live Competitor: GURPS 4E Fantasy",
+            "title": "Live Competitor: Space",
             "metric": "Active Competitor",
             "tier": "t2"
         },
