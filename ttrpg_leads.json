@@ -1,29 +1,71 @@
 {
-    "last_updated": "2026-08-03 15:59:12",
+    "last_updated": "2026-08-04 10:47:09",
     "leads": [
         {
             "source": "Bundle of Holding",
-            "title": "Live Competitor Bundle: Horror",
+            "title": "Live Competitor: GURPS 4E Infinite Worlds",
             "metric": "Active Competitor",
-            "tier": "t2",
-            "baseline_match": "DCC / Symbaroum Tier (\u00a314k - \u00a317k Baseline)",
-            "follow_on_recommendation": "Counter-Offer Strategy: Pitch a Fanatical-exclusive expansion bundle to capture players who just bought the base game from our competitor."
+            "tier": "t2"
         },
         {
             "source": "Bundle of Holding",
-            "title": "Live Competitor Bundle: Infinite Worlds",
+            "title": "Live Competitor: GURPS 4E Horror",
             "metric": "Active Competitor",
-            "tier": "t2",
-            "baseline_match": "DCC / Symbaroum Tier (\u00a314k - \u00a317k Baseline)",
-            "follow_on_recommendation": "Counter-Offer Strategy: Pitch a Fanatical-exclusive expansion bundle to capture players who just bought the base game from our competitor."
+            "tier": "t2"
         },
         {
             "source": "Bundle of Holding",
-            "title": "Live Competitor Bundle: GURPS Combat Action",
+            "title": "Live Competitor: GURPS 4E Fantasy",
             "metric": "Active Competitor",
-            "tier": "t2",
-            "baseline_match": "DCC / Symbaroum Tier (\u00a314k - \u00a317k Baseline)",
-            "follow_on_recommendation": "Counter-Offer Strategy: Pitch a Fanatical-exclusive expansion bundle to capture players who just bought the base game from our competitor."
+            "tier": "t2"
+        },
+        {
+            "source": "DriveThruRPG",
+            "title": "DTRPG #1: Black Dogs (A Pocket World)",
+            "metric": "DriveThru Bestseller",
+            "tier": "t2"
+        },
+        {
+            "source": "DriveThruRPG",
+            "title": "DTRPG #2: MANY OUTLAWS in the OUTER FRINGE",
+            "metric": "DriveThru Bestseller",
+            "tier": "t2"
+        },
+        {
+            "source": "DriveThruRPG",
+            "title": "DTRPG #3: Mapping The Mist - Downtown Disaster",
+            "metric": "DriveThru Bestseller",
+            "tier": "t2"
+        },
+        {
+            "source": "DriveThruRPG",
+            "title": "DTRPG #4: 100 Things the Noble House Tried to Hide",
+            "metric": "DriveThru Bestseller",
+            "tier": "t2"
+        },
+        {
+            "source": "DriveThruRPG",
+            "title": "DTRPG #5: The Vaelorian Codex",
+            "metric": "DriveThru Bestseller",
+            "tier": "t2"
+        },
+        {
+            "source": "DriveThruRPG",
+            "title": "DTRPG #6: Fantazos: Encounters: Barren (Desert) Token Pack",
+            "metric": "DriveThru Bestseller",
+            "tier": "t2"
+        },
+        {
+            "source": "DriveThruRPG",
+            "title": "DTRPG #7: Melpominee Remastered",
+            "metric": "DriveThru Bestseller",
+            "tier": "t2"
+        },
+        {
+            "source": "DriveThruRPG",
+            "title": "DTRPG #8: Player Aid for Courier - Repacked",
+            "metric": "DriveThru Bestseller",
+            "tier": "t2"
         }
     ]
 }
