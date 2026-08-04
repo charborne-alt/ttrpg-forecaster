@@ -26,10 +26,8 @@ jobs:
         run: |
           cat << 'EOF' > fetch_leads.py
           import requests
-          import xml.etree.ElementTree as ET
           from bs4 import BeautifulSoup
           import json
-          import re
           from datetime import datetime
 
           leads = []
@@ -41,8 +39,6 @@ jobs:
               if r_boh.status_code == 200:
                   soup = BeautifulSoup(r_boh.text, 'html.parser')
                   active_bundles = set()
-                  
-                  # BoH keeps active bundles in links containing '/presents/'
                   for link in soup.find_all('a', href=True):
                       if '/presents/' in link['href']:
                           name = link.text.strip()
@@ -52,53 +48,51 @@ jobs:
                   for idx, bundle_name in enumerate(list(active_bundles)[:3]):
                       leads.append({
                           "source": "Bundle of Holding",
-                          "title": f"Live Competitor Bundle: {bundle_name}",
+                          "title": f"Live Competitor: {bundle_name}",
                           "metric": "Active Competitor",
-                          "tier": "t2",
-                          "baseline_match": "DCC / Symbaroum Tier (£14k - £17k Baseline)",
-                          "follow_on_recommendation": "Counter-Offer Strategy: Pitch a Fanatical-exclusive expansion bundle to capture players who just bought the base game from our competitor."
+                          "tier": "t2"
                       })
           except Exception as e:
-              print("Bundle of Holding Fetch Warning:", e)
+              print("Bundle of Holding Fetch Error:", e)
 
-          # 2. FETCH RETAIL LEADS: DriveThruRPG via Gateway
+          # 2. SCRAPE KICKSTARTER (Tabletop Games)
+          try:
+              r_ks = requests.get('https://www.kickstarter.com/projects/feed/category/tabletop%20games?format=json', headers=headers, timeout=15)
+              if r_ks.status_code == 200:
+                 ks_data = r_ks.json()
+                 for project in ks_data.get("projects", [])[:3]:
+                     leads.append({
+                          "source": "Kickstarter",
+                          "title": f"KS Lead: {project.get('name', 'Unknown Project')}",
+                          "metric": "Trending Campaign",
+                          "tier": "t1"
+                      })
+          except Exception as e:
+              print("Kickstarter Fetch Error:", e)
+
+          # 3. FETCH RETAIL LEADS: DriveThruRPG
           try:
               gateway_url = "https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.drivethrurpg.com%2Frss.php"
               r_dtrpg = requests.get(gateway_url, timeout=15)
               if r_dtrpg.status_code == 200:
                   data = r_dtrpg.json()
                   if data.get("status") == "ok":
-                      for idx, item in enumerate(data.get("items", [])[:10]):
+                      for idx, item in enumerate(data.get("items", [])[:8]):
                           title = item.get("title", "").strip()
-                          t_lower = title.lower()
-                          
-                          # Tier Mapping against Fanatical Data
-                          if any(k in t_lower for k in ['delta green', 'pathfinder', 'dungeons & dragons', '5e', 'cyberpunk']):
-                              tier = "t1"
-                              match_name = "Delta Green / Pathfinder Tier (£23k - £41k Baseline)"
-                          elif any(k in t_lower for k in ['dungeon crawl', 'symbaroum', 'traveller', 'cthulhu', 'warhammer']):
-                              tier = "t2"
-                              match_name = "DCC / Symbaroum Tier (£14k - £17k Baseline)"
-                          else:
-                              tier = "t3"
-                              match_name = "Cult Classic / GM Tools Tier (£8k - £13k Baseline)"
-
                           leads.append({
                               "source": "DriveThruRPG",
-                              "title": f"#{idx+1} {title}",
+                              "title": f"DTRPG #{idx+1}: {title}",
                               "metric": "DriveThru Bestseller",
-                              "tier": tier,
-                              "baseline_match": match_name,
-                              "follow_on_recommendation": "" # HTML script will auto-generate this
+                              "tier": "t2"
                           })
           except Exception as e:
               print("DriveThruRPG Gateway Warning:", e)
 
-          # 3. SAFETY FALLBACK (Ensures file never breaks)
+          # Safety Fallback
           if not leads:
               leads = [
                   { "source": "Bundle of Holding", "title": "Live Competitor Bundle: Fantasy Campaign", "tier": "t2" },
-                  { "source": "DriveThruRPG", "title": "#1 Delta Green Cosmic Horror RPG Collection", "tier": "t1" }
+                  { "source": "DriveThruRPG", "title": "DTRPG #1: Delta Green Cosmic Horror RPG Collection", "tier": "t1" }
               ]
 
           output = {
@@ -108,7 +102,7 @@ jobs:
 
           with open('ttrpg_leads.json', 'w') as f:
               json.dump(output, f, indent=4)
-          print("Updated ttrpg_leads.json with", len(leads), "products.")
+          print("Updated ttrpg_leads.json successfully.")
           EOF
           python fetch_leads.py
 
@@ -120,6 +114,6 @@ jobs:
           if git diff --staged --quiet; then
             echo "No changes"
           else
-            git commit -m "Auto-update TTRPG leads with Competitor Monitoring"
+            git commit -m "Auto-update Multi-Platform Leads"
             git push
           fi
