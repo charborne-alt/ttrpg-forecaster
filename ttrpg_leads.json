@@ -1,9 +1,9 @@
 {
-    "last_updated": "2026-08-04 10:47:09",
+    "last_updated": "2026-08-04 10:51:03",
     "leads": [
         {
             "source": "Bundle of Holding",
-            "title": "Live Competitor: GURPS 4E Infinite Worlds",
+            "title": "Live Competitor: GURPS 4E Space",
             "metric": "Active Competitor",
             "tier": "t2"
         },
@@ -18,6 +18,24 @@
             "title": "Live Competitor: GURPS 4E Fantasy",
             "metric": "Active Competitor",
             "tier": "t2"
+        },
+        {
+            "source": "Itch.io",
+            "title": "Indie Trending: Mythic GME Digital",
+            "metric": "Top Seller",
+            "tier": "t3"
+        },
+        {
+            "source": "Itch.io",
+            "title": "Indie Trending: SoloRPG Field Guide - Free Version",
+            "metric": "Top Seller",
+            "tier": "t3"
+        },
+        {
+            "source": "Itch.io",
+            "title": "Indie Trending: PUM Companion: RPG Storytelling App",
+            "metric": "Top Seller",
+            "tier": "t3"
         },
         {
             "source": "DriveThruRPG",
