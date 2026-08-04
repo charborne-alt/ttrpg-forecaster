@@ -70,7 +70,23 @@ jobs:
           except Exception as e:
               print("Kickstarter Fetch Error:", e)
 
-          # 3. FETCH RETAIL LEADS: DriveThruRPG
+          # 3. SCRAPE ITCH.IO (TTRPG Tag)
+          try:
+              r_itch = requests.get('https://itch.io/games/top-sellers/tag-ttrpg', headers=headers, timeout=15)
+              if r_itch.status_code == 200:
+                  soup = BeautifulSoup(r_itch.text, 'html.parser')
+                  for idx, game in enumerate(soup.find_all('a', class_='title')[:3]):
+                      name = game.text.strip()
+                      leads.append({
+                          "source": "Itch.io",
+                          "title": f"Indie Trending: {name}",
+                          "metric": "Top Seller",
+                          "tier": "t3"
+                      })
+          except Exception as e:
+              print("Itch.io Fetch Error:", e)
+
+          # 4. FETCH RETAIL LEADS: DriveThruRPG
           try:
               gateway_url = "https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.drivethrurpg.com%2Frss.php"
               r_dtrpg = requests.get(gateway_url, timeout=15)
