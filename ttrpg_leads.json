@@ -1,9 +1,9 @@
 {
-    "last_updated": "2026-08-04 12:30:15",
+    "last_updated": "2026-08-05 12:27:11",
     "leads": [
         {
             "source": "Bundle of Holding",
-            "title": "Live Competitor: Horror",
+            "title": "Live Competitor: Space",
             "metric": "Active Competitor",
             "tier": "t2"
         },
@@ -15,7 +15,7 @@
         },
         {
             "source": "Bundle of Holding",
-            "title": "Live Competitor: Space",
+            "title": "Live Competitor: Horror",
             "metric": "Active Competitor",
             "tier": "t2"
         },
@@ -27,61 +27,61 @@
         },
         {
             "source": "Itch.io",
-            "title": "Indie Trending: SoloRPG Field Guide - Free Version",
-            "metric": "Top Seller",
-            "tier": "t3"
-        },
-        {
-            "source": "Itch.io",
             "title": "Indie Trending: PUM Companion: RPG Storytelling App",
             "metric": "Top Seller",
             "tier": "t3"
         },
         {
+            "source": "Itch.io",
+            "title": "Indie Trending: SoloRPG Field Guide - Free Version",
+            "metric": "Top Seller",
+            "tier": "t3"
+        },
+        {
             "source": "DriveThruRPG",
-            "title": "DTRPG #1: Black Dogs (A Pocket World)",
+            "title": "DTRPG #1: Cult of the Sun - Assault on Emberash Hold - A Level 8 5e Adventure",
             "metric": "DriveThru Bestseller",
             "tier": "t2"
         },
         {
             "source": "DriveThruRPG",
-            "title": "DTRPG #2: MANY OUTLAWS in the OUTER FRINGE",
+            "title": "DTRPG #2: Weald",
             "metric": "DriveThru Bestseller",
             "tier": "t2"
         },
         {
             "source": "DriveThruRPG",
-            "title": "DTRPG #3: Mapping The Mist - Downtown Disaster",
+            "title": "DTRPG #3: Star Trek Adventures BRIEFS Star Trek V: The Final Frontier PDF",
             "metric": "DriveThru Bestseller",
             "tier": "t2"
         },
         {
             "source": "DriveThruRPG",
-            "title": "DTRPG #4: 100 Things the Noble House Tried to Hide",
+            "title": "DTRPG #4: 219 - Ruined Wall (b&amp;w, Full page)",
             "metric": "DriveThru Bestseller",
             "tier": "t2"
         },
         {
             "source": "DriveThruRPG",
-            "title": "DTRPG #5: The Vaelorian Codex",
+            "title": "DTRPG #5: The Wanting Wizard VTT",
             "metric": "DriveThru Bestseller",
             "tier": "t2"
         },
         {
             "source": "DriveThruRPG",
-            "title": "DTRPG #6: Fantazos: Encounters: Barren (Desert) Token Pack",
+            "title": "DTRPG #6: Ouibliette - Asylum Keeper",
             "metric": "DriveThru Bestseller",
             "tier": "t2"
         },
         {
             "source": "DriveThruRPG",
-            "title": "DTRPG #7: Melpominee Remastered",
+            "title": "DTRPG #7: 2670 RPG: Military professions",
             "metric": "DriveThru Bestseller",
             "tier": "t2"
         },
         {
             "source": "DriveThruRPG",
-            "title": "DTRPG #8: Player Aid for Courier - Repacked",
+            "title": "DTRPG #8: Heroes Forever RPG Weapons of the Ages 2nd Edition Sourcebook",
             "metric": "DriveThru Bestseller",
             "tier": "t2"
         }
