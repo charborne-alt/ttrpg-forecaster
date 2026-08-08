@@ -1,12 +1,6 @@
 {
-    "last_updated": "2026-08-07 09:35:42",
+    "last_updated": "2026-08-08 08:06:31",
     "leads": [
-        {
-            "source": "Bundle of Holding",
-            "title": "Live Competitor: GURPS 4E Space",
-            "metric": "Active Competitor",
-            "tier": "t2"
-        },
         {
             "source": "Bundle of Holding",
             "title": "Live Competitor: Space",
@@ -15,15 +9,15 @@
         },
         {
             "source": "Bundle of Holding",
-            "title": "Live Competitor: Horror",
+            "title": "Live Competitor: Fantasy",
             "metric": "Active Competitor",
             "tier": "t2"
         },
         {
-            "source": "Itch.io",
-            "title": "Indie Trending: Pocket Cheat Sheet for D&D 5e (and Solo play)",
-            "metric": "Top Seller",
-            "tier": "t3"
+            "source": "Bundle of Holding",
+            "title": "Live Competitor: GURPS 4E Horror",
+            "metric": "Active Competitor",
+            "tier": "t2"
         },
         {
             "source": "Itch.io",
@@ -38,52 +32,10 @@
             "tier": "t3"
         },
         {
-            "source": "DriveThruRPG",
-            "title": "DTRPG #1: Peculiar Plants - Lexicaria Bestia Vol.7 - 108 plant based monsters",
-            "metric": "DriveThru Bestseller",
-            "tier": "t2"
-        },
-        {
-            "source": "DriveThruRPG",
-            "title": "DTRPG #2: Mythic North [75% OFF BUNDLE]",
-            "metric": "DriveThru Bestseller",
-            "tier": "t2"
-        },
-        {
-            "source": "DriveThruRPG",
-            "title": "DTRPG #3: VLG: The Vastlands Guidebook",
-            "metric": "DriveThru Bestseller",
-            "tier": "t2"
-        },
-        {
-            "source": "DriveThruRPG",
-            "title": "DTRPG #4: Rio das Trevas Loresheet book I",
-            "metric": "DriveThru Bestseller",
-            "tier": "t2"
-        },
-        {
-            "source": "DriveThruRPG",
-            "title": "DTRPG #5: Avonwood Anarchy",
-            "metric": "DriveThru Bestseller",
-            "tier": "t2"
-        },
-        {
-            "source": "DriveThruRPG",
-            "title": "DTRPG #6: Traveler!s Adventures - Sovereign Debt",
-            "metric": "DriveThru Bestseller",
-            "tier": "t2"
-        },
-        {
-            "source": "DriveThruRPG",
-            "title": "DTRPG #7: The Warden's Codex - Supplicant's Guide",
-            "metric": "DriveThru Bestseller",
-            "tier": "t2"
-        },
-        {
-            "source": "DriveThruRPG",
-            "title": "DTRPG #8: An Unlikely Duo",
-            "metric": "DriveThru Bestseller",
-            "tier": "t2"
+            "source": "Itch.io",
+            "title": "Indie Trending: Pocket Cheat Sheet for D&D 5e (and Solo play)",
+            "metric": "Top Seller",
+            "tier": "t3"
         }
     ]
 }
