@@ -1,9 +1,9 @@
 {
-    "last_updated": "2026-08-08 08:06:31",
+    "last_updated": "2026-08-09 08:09:32",
     "leads": [
         {
             "source": "Bundle of Holding",
-            "title": "Live Competitor: Space",
+            "title": "Live Competitor: Horror",
             "metric": "Active Competitor",
             "tier": "t2"
         },
@@ -15,15 +15,9 @@
         },
         {
             "source": "Bundle of Holding",
-            "title": "Live Competitor: GURPS 4E Horror",
+            "title": "Live Competitor: GURPS 4E Essentials",
             "metric": "Active Competitor",
             "tier": "t2"
-        },
-        {
-            "source": "Itch.io",
-            "title": "Indie Trending: Mythic GME Digital",
-            "metric": "Top Seller",
-            "tier": "t3"
         },
         {
             "source": "Itch.io",
@@ -33,9 +27,63 @@
         },
         {
             "source": "Itch.io",
-            "title": "Indie Trending: Pocket Cheat Sheet for D&D 5e (and Solo play)",
+            "title": "Indie Trending: Mythic GME Digital",
             "metric": "Top Seller",
             "tier": "t3"
+        },
+        {
+            "source": "Itch.io",
+            "title": "Indie Trending: FRAGMENTED",
+            "metric": "Top Seller",
+            "tier": "t3"
+        },
+        {
+            "source": "DriveThruRPG",
+            "title": "DTRPG #1: Veil of the Void GM &amp; Adversary Sheets",
+            "metric": "DriveThru Bestseller",
+            "tier": "t2"
+        },
+        {
+            "source": "DriveThruRPG",
+            "title": "DTRPG #2: Nocturnal: A Modern Ghost-Hunting RPG",
+            "metric": "DriveThru Bestseller",
+            "tier": "t2"
+        },
+        {
+            "source": "DriveThruRPG",
+            "title": "DTRPG #3: Veil of the Void Vehicle Sheets",
+            "metric": "DriveThru Bestseller",
+            "tier": "t2"
+        },
+        {
+            "source": "DriveThruRPG",
+            "title": "DTRPG #4: Ajax's Amazing Armory",
+            "metric": "DriveThru Bestseller",
+            "tier": "t2"
+        },
+        {
+            "source": "DriveThruRPG",
+            "title": "DTRPG #5: AECAVE03-B - Braingnaw Cleft",
+            "metric": "DriveThru Bestseller",
+            "tier": "t2"
+        },
+        {
+            "source": "DriveThruRPG",
+            "title": "DTRPG #6: FSpaceRPG Federation Times issue 22 August 2026",
+            "metric": "DriveThru Bestseller",
+            "tier": "t2"
+        },
+        {
+            "source": "DriveThruRPG",
+            "title": "DTRPG #7: The Pundit Files - Issue 16: The Slavic World Tree",
+            "metric": "DriveThru Bestseller",
+            "tier": "t2"
+        },
+        {
+            "source": "DriveThruRPG",
+            "title": "DTRPG #8: Magic Item: Watchfire Torch",
+            "metric": "DriveThru Bestseller",
+            "tier": "t2"
         }
     ]
 }
