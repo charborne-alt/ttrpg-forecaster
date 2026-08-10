@@ -1,21 +1,21 @@
 {
-    "last_updated": "2026-08-10 08:00:10",
+    "last_updated": "2026-08-10 10:40:30",
     "leads": [
         {
             "source": "Bundle of Holding",
-            "title": "Live Competitor: Fantasy",
+            "title": "Live Competitor: Essentials",
+            "metric": "Active Competitor",
+            "tier": "t2"
+        },
+        {
+            "source": "Bundle of Holding",
+            "title": "Live Competitor: GURPS 4E Horror",
             "metric": "Active Competitor",
             "tier": "t2"
         },
         {
             "source": "Bundle of Holding",
             "title": "Live Competitor: GURPS Combat Action",
-            "metric": "Active Competitor",
-            "tier": "t2"
-        },
-        {
-            "source": "Bundle of Holding",
-            "title": "Live Competitor: GURPS 4E Infinite Worlds",
             "metric": "Active Competitor",
             "tier": "t2"
         },
@@ -36,6 +36,54 @@
             "title": "Indie Trending: FRAGMENTED",
             "metric": "Top Seller",
             "tier": "t3"
+        },
+        {
+            "source": "DriveThruRPG",
+            "title": "DTRPG #1: Fantasy Heroes Printable Tokens Pt.14 (2025)",
+            "metric": "DriveThru Bestseller",
+            "tier": "t2"
+        },
+        {
+            "source": "DriveThruRPG",
+            "title": "DTRPG #2: Protocol: Cognitive Realignment (video file)",
+            "metric": "DriveThru Bestseller",
+            "tier": "t2"
+        },
+        {
+            "source": "DriveThruRPG",
+            "title": "DTRPG #3: Ten Wizard Conjuror Encounters",
+            "metric": "DriveThru Bestseller",
+            "tier": "t2"
+        },
+        {
+            "source": "DriveThruRPG",
+            "title": "DTRPG #4: Hexxen 1733 Ausf\u00fcllbarer Charakterbogen",
+            "metric": "DriveThru Bestseller",
+            "tier": "t2"
+        },
+        {
+            "source": "DriveThruRPG",
+            "title": "DTRPG #5: Robots, Great &amp; Small [70% OFF BUNDLE]",
+            "metric": "DriveThru Bestseller",
+            "tier": "t2"
+        },
+        {
+            "source": "DriveThruRPG",
+            "title": "DTRPG #6: Spot Of Bother Set Nine: Chrono Monsters",
+            "metric": "DriveThru Bestseller",
+            "tier": "t2"
+        },
+        {
+            "source": "DriveThruRPG",
+            "title": "DTRPG #7: Over and Out | An Out There Waiting Expansion",
+            "metric": "DriveThru Bestseller",
+            "tier": "t2"
+        },
+        {
+            "source": "DriveThruRPG",
+            "title": "DTRPG #8: Spot Of Bother Set Eight: Meridian Patrol",
+            "metric": "DriveThru Bestseller",
+            "tier": "t2"
         }
     ]
 }
