@@ -1,12 +1,6 @@
 {
-    "last_updated": "2026-08-09 08:09:32",
+    "last_updated": "2026-08-10 08:00:10",
     "leads": [
-        {
-            "source": "Bundle of Holding",
-            "title": "Live Competitor: Horror",
-            "metric": "Active Competitor",
-            "tier": "t2"
-        },
         {
             "source": "Bundle of Holding",
             "title": "Live Competitor: Fantasy",
@@ -15,7 +9,13 @@
         },
         {
             "source": "Bundle of Holding",
-            "title": "Live Competitor: GURPS 4E Essentials",
+            "title": "Live Competitor: GURPS Combat Action",
+            "metric": "Active Competitor",
+            "tier": "t2"
+        },
+        {
+            "source": "Bundle of Holding",
+            "title": "Live Competitor: GURPS 4E Infinite Worlds",
             "metric": "Active Competitor",
             "tier": "t2"
         },
@@ -36,54 +36,6 @@
             "title": "Indie Trending: FRAGMENTED",
             "metric": "Top Seller",
             "tier": "t3"
-        },
-        {
-            "source": "DriveThruRPG",
-            "title": "DTRPG #1: Veil of the Void GM &amp; Adversary Sheets",
-            "metric": "DriveThru Bestseller",
-            "tier": "t2"
-        },
-        {
-            "source": "DriveThruRPG",
-            "title": "DTRPG #2: Nocturnal: A Modern Ghost-Hunting RPG",
-            "metric": "DriveThru Bestseller",
-            "tier": "t2"
-        },
-        {
-            "source": "DriveThruRPG",
-            "title": "DTRPG #3: Veil of the Void Vehicle Sheets",
-            "metric": "DriveThru Bestseller",
-            "tier": "t2"
-        },
-        {
-            "source": "DriveThruRPG",
-            "title": "DTRPG #4: Ajax's Amazing Armory",
-            "metric": "DriveThru Bestseller",
-            "tier": "t2"
-        },
-        {
-            "source": "DriveThruRPG",
-            "title": "DTRPG #5: AECAVE03-B - Braingnaw Cleft",
-            "metric": "DriveThru Bestseller",
-            "tier": "t2"
-        },
-        {
-            "source": "DriveThruRPG",
-            "title": "DTRPG #6: FSpaceRPG Federation Times issue 22 August 2026",
-            "metric": "DriveThru Bestseller",
-            "tier": "t2"
-        },
-        {
-            "source": "DriveThruRPG",
-            "title": "DTRPG #7: The Pundit Files - Issue 16: The Slavic World Tree",
-            "metric": "DriveThru Bestseller",
-            "tier": "t2"
-        },
-        {
-            "source": "DriveThruRPG",
-            "title": "DTRPG #8: Magic Item: Watchfire Torch",
-            "metric": "DriveThru Bestseller",
-            "tier": "t2"
         }
     ]
 }
