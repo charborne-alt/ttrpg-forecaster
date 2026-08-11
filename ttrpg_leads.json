@@ -1,6 +1,12 @@
 {
-    "last_updated": "2026-08-10 10:40:30",
+    "last_updated": "2026-08-11 09:34:36",
     "leads": [
+        {
+            "source": "Bundle of Holding",
+            "title": "Live Competitor: Fantasy",
+            "metric": "Active Competitor",
+            "tier": "t2"
+        },
         {
             "source": "Bundle of Holding",
             "title": "Live Competitor: Essentials",
@@ -9,13 +15,7 @@
         },
         {
             "source": "Bundle of Holding",
-            "title": "Live Competitor: GURPS 4E Horror",
-            "metric": "Active Competitor",
-            "tier": "t2"
-        },
-        {
-            "source": "Bundle of Holding",
-            "title": "Live Competitor: GURPS Combat Action",
+            "title": "Live Competitor: Space",
             "metric": "Active Competitor",
             "tier": "t2"
         },
@@ -39,49 +39,49 @@
         },
         {
             "source": "DriveThruRPG",
-            "title": "DTRPG #1: Fantasy Heroes Printable Tokens Pt.14 (2025)",
+            "title": "DTRPG #1: 10 pcs, hand-painted adventurers standie pack (with black and white outlines)",
             "metric": "DriveThru Bestseller",
             "tier": "t2"
         },
         {
             "source": "DriveThruRPG",
-            "title": "DTRPG #2: Protocol: Cognitive Realignment (video file)",
+            "title": "DTRPG #2: 10 pcs, hand-painted goblin standie pack (with black and whitee outlines)",
             "metric": "DriveThru Bestseller",
             "tier": "t2"
         },
         {
             "source": "DriveThruRPG",
-            "title": "DTRPG #3: Ten Wizard Conjuror Encounters",
+            "title": "DTRPG #3: Yokai - Kuchisake-Onna",
             "metric": "DriveThru Bestseller",
             "tier": "t2"
         },
         {
             "source": "DriveThruRPG",
-            "title": "DTRPG #4: Hexxen 1733 Ausf\u00fcllbarer Charakterbogen",
+            "title": "DTRPG #4: Marco G. Fossati - Bundle Italiano [BUNDLE]",
             "metric": "DriveThru Bestseller",
             "tier": "t2"
         },
         {
             "source": "DriveThruRPG",
-            "title": "DTRPG #5: Robots, Great &amp; Small [70% OFF BUNDLE]",
+            "title": "DTRPG #5: The World Tree Is Coal And You Must Mine",
             "metric": "DriveThru Bestseller",
             "tier": "t2"
         },
         {
             "source": "DriveThruRPG",
-            "title": "DTRPG #6: Spot Of Bother Set Nine: Chrono Monsters",
+            "title": "DTRPG #6: Heart of Evil (YMNP E5)",
             "metric": "DriveThru Bestseller",
             "tier": "t2"
         },
         {
             "source": "DriveThruRPG",
-            "title": "DTRPG #7: Over and Out | An Out There Waiting Expansion",
+            "title": "DTRPG #7: Snake Tongue 5E Class",
             "metric": "DriveThru Bestseller",
             "tier": "t2"
         },
         {
             "source": "DriveThruRPG",
-            "title": "DTRPG #8: Spot Of Bother Set Eight: Meridian Patrol",
+            "title": "DTRPG #8: Mazes Monthly Folio: Year 4",
             "metric": "DriveThru Bestseller",
             "tier": "t2"
         }
