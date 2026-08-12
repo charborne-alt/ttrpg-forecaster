@@ -1,29 +1,23 @@
 {
-    "last_updated": "2026-08-11 09:34:36",
+    "last_updated": "2026-08-12 09:46:45",
     "leads": [
         {
             "source": "Bundle of Holding",
-            "title": "Live Competitor: Fantasy",
+            "title": "Live Competitor: Infinite Worlds",
             "metric": "Active Competitor",
             "tier": "t2"
         },
         {
             "source": "Bundle of Holding",
-            "title": "Live Competitor: Essentials",
+            "title": "Live Competitor: GURPS Combat Action",
             "metric": "Active Competitor",
             "tier": "t2"
         },
         {
             "source": "Bundle of Holding",
-            "title": "Live Competitor: Space",
+            "title": "Live Competitor: Horror",
             "metric": "Active Competitor",
             "tier": "t2"
-        },
-        {
-            "source": "Itch.io",
-            "title": "Indie Trending: DESCEND",
-            "metric": "Top Seller",
-            "tier": "t3"
         },
         {
             "source": "Itch.io",
@@ -33,57 +27,15 @@
         },
         {
             "source": "Itch.io",
-            "title": "Indie Trending: FRAGMENTED",
+            "title": "Indie Trending: DESCEND",
             "metric": "Top Seller",
             "tier": "t3"
         },
         {
-            "source": "DriveThruRPG",
-            "title": "DTRPG #1: 10 pcs, hand-painted adventurers standie pack (with black and white outlines)",
-            "metric": "DriveThru Bestseller",
-            "tier": "t2"
-        },
-        {
-            "source": "DriveThruRPG",
-            "title": "DTRPG #2: 10 pcs, hand-painted goblin standie pack (with black and whitee outlines)",
-            "metric": "DriveThru Bestseller",
-            "tier": "t2"
-        },
-        {
-            "source": "DriveThruRPG",
-            "title": "DTRPG #3: Yokai - Kuchisake-Onna",
-            "metric": "DriveThru Bestseller",
-            "tier": "t2"
-        },
-        {
-            "source": "DriveThruRPG",
-            "title": "DTRPG #4: Marco G. Fossati - Bundle Italiano [BUNDLE]",
-            "metric": "DriveThru Bestseller",
-            "tier": "t2"
-        },
-        {
-            "source": "DriveThruRPG",
-            "title": "DTRPG #5: The World Tree Is Coal And You Must Mine",
-            "metric": "DriveThru Bestseller",
-            "tier": "t2"
-        },
-        {
-            "source": "DriveThruRPG",
-            "title": "DTRPG #6: Heart of Evil (YMNP E5)",
-            "metric": "DriveThru Bestseller",
-            "tier": "t2"
-        },
-        {
-            "source": "DriveThruRPG",
-            "title": "DTRPG #7: Snake Tongue 5E Class",
-            "metric": "DriveThru Bestseller",
-            "tier": "t2"
-        },
-        {
-            "source": "DriveThruRPG",
-            "title": "DTRPG #8: Mazes Monthly Folio: Year 4",
-            "metric": "DriveThru Bestseller",
-            "tier": "t2"
+            "source": "Itch.io",
+            "title": "Indie Trending: FRAGMENTED",
+            "metric": "Top Seller",
+            "tier": "t3"
         }
     ]
 }
