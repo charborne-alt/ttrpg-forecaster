@@ -1,21 +1,21 @@
 {
-    "last_updated": "2026-08-13 09:46:54",
+    "last_updated": "2026-08-14 09:41:09",
     "leads": [
         {
             "source": "Bundle of Holding",
+            "title": "Live Competitor: Frontier Scum",
+            "metric": "Active Competitor",
+            "tier": "t2"
+        },
+        {
+            "source": "Bundle of Holding",
+            "title": "Live Competitor: Essentials",
+            "metric": "Active Competitor",
+            "tier": "t2"
+        },
+        {
+            "source": "Bundle of Holding",
             "title": "Live Competitor: GURPS 4E Essentials",
-            "metric": "Active Competitor",
-            "tier": "t2"
-        },
-        {
-            "source": "Bundle of Holding",
-            "title": "Live Competitor: Supers",
-            "metric": "Active Competitor",
-            "tier": "t2"
-        },
-        {
-            "source": "Bundle of Holding",
-            "title": "Live Competitor: Infinite Worlds",
             "metric": "Active Competitor",
             "tier": "t2"
         },
@@ -36,54 +36,6 @@
             "title": "Indie Trending: NEUROCRACY",
             "metric": "Top Seller",
             "tier": "t3"
-        },
-        {
-            "source": "DriveThruRPG",
-            "title": "DTRPG #1: Torchbound fanzine, issue 4",
-            "metric": "DriveThru Bestseller",
-            "tier": "t2"
-        },
-        {
-            "source": "DriveThruRPG",
-            "title": "DTRPG #2: Sci-Fi Sampler [80% OFF BUNDLE]",
-            "metric": "DriveThru Bestseller",
-            "tier": "t2"
-        },
-        {
-            "source": "DriveThruRPG",
-            "title": "DTRPG #3: Things the Guard Has Seen #1",
-            "metric": "DriveThru Bestseller",
-            "tier": "t2"
-        },
-        {
-            "source": "DriveThruRPG",
-            "title": "DTRPG #4: Celtic Legends Digital Bundle [BUNDLE]",
-            "metric": "DriveThru Bestseller",
-            "tier": "t2"
-        },
-        {
-            "source": "DriveThruRPG",
-            "title": "DTRPG #5: Celtic Legends Print Bundle [BUNDLE]",
-            "metric": "DriveThru Bestseller",
-            "tier": "t2"
-        },
-        {
-            "source": "DriveThruRPG",
-            "title": "DTRPG #6: BBEG Toolkit: Forest &amp; Fey Encounters",
-            "metric": "DriveThru Bestseller",
-            "tier": "t2"
-        },
-        {
-            "source": "DriveThruRPG",
-            "title": "DTRPG #7: Never Surrender: A Prosperon Bio-Cyberpunk RPG Adventure VolII",
-            "metric": "DriveThru Bestseller",
-            "tier": "t2"
-        },
-        {
-            "source": "DriveThruRPG",
-            "title": "DTRPG #8: TrueHex 0.5-Inch Colored Graph Paper",
-            "metric": "DriveThru Bestseller",
-            "tier": "t2"
         }
     ]
 }
