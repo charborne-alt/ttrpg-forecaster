@@ -1,21 +1,21 @@
 {
-    "last_updated": "2026-08-15 07:19:02",
+    "last_updated": "2026-08-16 07:44:13",
     "leads": [
         {
             "source": "Bundle of Holding",
-            "title": "Live Competitor: GURPS 4E Essentials",
-            "metric": "Active Competitor",
-            "tier": "t2"
-        },
-        {
-            "source": "Bundle of Holding",
-            "title": "Live Competitor: Frontier Scum",
+            "title": "Live Competitor: GURPS 4E Infinite Worlds",
             "metric": "Active Competitor",
             "tier": "t2"
         },
         {
             "source": "Bundle of Holding",
             "title": "Live Competitor: GURPS Combat Action",
+            "metric": "Active Competitor",
+            "tier": "t2"
+        },
+        {
+            "source": "Bundle of Holding",
+            "title": "Live Competitor: Combat Action",
             "metric": "Active Competitor",
             "tier": "t2"
         },
