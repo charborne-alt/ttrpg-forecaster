@@ -1,5 +1,5 @@
 {
-    "last_updated": "2026-08-18 07:58:10",
+    "last_updated": "2026-08-19 07:58:10",
     "leads": [
         {
             "source": "Bundle of Holding",
@@ -9,13 +9,13 @@
         },
         {
             "source": "Bundle of Holding",
-            "title": "Live Competitor: NPC Portrait Decks",
+            "title": "Live Competitor: Frontier Scum",
             "metric": "Active Competitor",
             "tier": "t2"
         },
         {
             "source": "Bundle of Holding",
-            "title": "Live Competitor: GURPS 4E Fantasy",
+            "title": "Live Competitor: NPC Portrait Decks",
             "metric": "Active Competitor",
             "tier": "t2"
         },
@@ -36,54 +36,6 @@
             "title": "Indie Trending: Legends of the Dark World",
             "metric": "Top Seller",
             "tier": "t3"
-        },
-        {
-            "source": "DriveThruRPG",
-            "title": "DTRPG #1: The Sheriff\u2019s Files - File No. 3 - The Pier Fire",
-            "metric": "DriveThru Bestseller",
-            "tier": "t2"
-        },
-        {
-            "source": "DriveThruRPG",
-            "title": "DTRPG #2: Gone Squatchin'",
-            "metric": "DriveThru Bestseller",
-            "tier": "t2"
-        },
-        {
-            "source": "DriveThruRPG",
-            "title": "DTRPG #3: DarkSpace Character Pregens - Level 2: Vharos Run Character Pregen Pack for DarkSpace RPG",
-            "metric": "DriveThru Bestseller",
-            "tier": "t2"
-        },
-        {
-            "source": "DriveThruRPG",
-            "title": "DTRPG #4: The Vharos Run: Adventure for DarkSpace RPG",
-            "metric": "DriveThru Bestseller",
-            "tier": "t2"
-        },
-        {
-            "source": "DriveThruRPG",
-            "title": "DTRPG #5: Combat Encounters Toolkit",
-            "metric": "DriveThru Bestseller",
-            "tier": "t2"
-        },
-        {
-            "source": "DriveThruRPG",
-            "title": "DTRPG #6: Spider PDF Mini",
-            "metric": "DriveThru Bestseller",
-            "tier": "t2"
-        },
-        {
-            "source": "DriveThruRPG",
-            "title": "DTRPG #7: Tri Tac Spotlight 2026: B13, FW, INC",
-            "metric": "DriveThru Bestseller",
-            "tier": "t2"
-        },
-        {
-            "source": "DriveThruRPG",
-            "title": "DTRPG #8: Fatso Inc Facility Cards",
-            "metric": "DriveThru Bestseller",
-            "tier": "t2"
         }
     ]
 }
