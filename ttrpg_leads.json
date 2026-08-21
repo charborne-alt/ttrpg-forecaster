@@ -1,15 +1,15 @@
 {
-    "last_updated": "2026-08-20 08:03:18",
+    "last_updated": "2026-08-21 08:04:00",
     "leads": [
         {
             "source": "Bundle of Holding",
-            "title": "Live Competitor: NPC Portrait Decks",
+            "title": "Live Competitor: Dungeon Age 2",
             "metric": "Active Competitor",
             "tier": "t2"
         },
         {
             "source": "Bundle of Holding",
-            "title": "Live Competitor: Dungeon Age 2",
+            "title": "Live Competitor: NPC Portrait Decks",
             "metric": "Active Competitor",
             "tier": "t2"
         },
@@ -33,7 +33,7 @@
         },
         {
             "source": "Itch.io",
-            "title": "Indie Trending: Legends of the Dark World",
+            "title": "Indie Trending: PUM Companion: RPG Storytelling App",
             "metric": "Top Seller",
             "tier": "t3"
         }
