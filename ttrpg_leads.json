@@ -1,5 +1,5 @@
 {
-    "last_updated": "2026-08-21 08:04:00",
+    "last_updated": "2026-08-22 07:45:40",
     "leads": [
         {
             "source": "Bundle of Holding",
@@ -27,15 +27,63 @@
         },
         {
             "source": "Itch.io",
-            "title": "Indie Trending: NEUROCRACY",
+            "title": "Indie Trending: PUM Companion: RPG Storytelling App",
             "metric": "Top Seller",
             "tier": "t3"
         },
         {
             "source": "Itch.io",
-            "title": "Indie Trending: PUM Companion: RPG Storytelling App",
+            "title": "Indie Trending: Map of The Deep for Gradient Descent",
             "metric": "Top Seller",
             "tier": "t3"
+        },
+        {
+            "source": "DriveThruRPG",
+            "title": "DTRPG #1: Serenissima Folge 47",
+            "metric": "DriveThru Bestseller",
+            "tier": "t2"
+        },
+        {
+            "source": "DriveThruRPG",
+            "title": "DTRPG #2: Quick Adventure Hooks #5",
+            "metric": "DriveThru Bestseller",
+            "tier": "t2"
+        },
+        {
+            "source": "DriveThruRPG",
+            "title": "DTRPG #3: Historia Obscura",
+            "metric": "DriveThru Bestseller",
+            "tier": "t2"
+        },
+        {
+            "source": "DriveThruRPG",
+            "title": "DTRPG #4: Enclave Stories #4 - The Troubleshooting Inc",
+            "metric": "DriveThru Bestseller",
+            "tier": "t2"
+        },
+        {
+            "source": "DriveThruRPG",
+            "title": "DTRPG #5: D&amp;D Conditions: Stunned and Unconscious \u2014 2024 (5.5e) Rules",
+            "metric": "DriveThru Bestseller",
+            "tier": "t2"
+        },
+        {
+            "source": "DriveThruRPG",
+            "title": "DTRPG #6: Advances In... Runes! Issue #4",
+            "metric": "DriveThru Bestseller",
+            "tier": "t2"
+        },
+        {
+            "source": "DriveThruRPG",
+            "title": "DTRPG #7: Velkan Lantern - The Venom Bloom",
+            "metric": "DriveThru Bestseller",
+            "tier": "t2"
+        },
+        {
+            "source": "DriveThruRPG",
+            "title": "DTRPG #8: Taberna Celeris",
+            "metric": "DriveThru Bestseller",
+            "tier": "t2"
         }
     ]
 }
